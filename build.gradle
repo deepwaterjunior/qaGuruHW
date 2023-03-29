@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.codeborne:selenide:6.12.3'
+    implementation 'com.lotaris.junit:junit-helpers:1.0.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+}
+
+test {
+    useJUnitPlatform()
+}
