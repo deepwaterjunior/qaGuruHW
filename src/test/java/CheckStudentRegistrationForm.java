@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 
+import java.io.File;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -38,7 +41,7 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
         $(".react-datepicker__month-select").selectOptionContainingText("April");
         // Нашли дроп-даун (селект) и выбрали по тексту нужный год
         $(".react-datepicker__year-select").selectOptionByValue("1994");
-        /* Нашли нужный день в таблице по классу и кликнули по нему (хотел как-то иначе, по контексту aria-label или значению
+        /* Нашли нужный день в таблице по классу и кликнули по нему (хотел как-то иначе, или значению
         но не понял как реализовать*/
         $(".react-datepicker__day--024").click();
         //  ввели название предмета студента
@@ -46,8 +49,40 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
         //  выбрали хобби
         $(byText("Music")).click();
         $(byText("Reading")).click();
+        //  загрузили файл
+        $("#uploadPicture").uploadFile(new File("src/test/resources/myuglyfacelol.jpg"));
+       //заполнили инпут
+        $("#currentAddress").setValue("You're looking damn good kitty, cuz you're in the Saint-Peterburg!");
+        //выбрали штат и город
+        $("#state").click();
+        $(byText("Uttar Pradesh")).click();
+        $("#city").click();
+        $(byText("Merrut")).click();
 
-        $("#uploadPicture").uploadFile();
+
+        //проверили данные в таблице
+       $(".table-responsive").shouldHave(
+                text("Ivan123"),
+                text("Ivan0V321~"),
+                text("N_a-t.m+e@e_X-a.m0ple.coM52"),
+                text("Male"),
+                text("0123456789"),
+                text("24 April,1994"),
+                text("History"),
+                text("Music,Reading"),
+                text("myuglyfacelol.jpg"),
+                text("You're looking damn good kitty, cuz you're in the Saint-Peterburg!"),
+                text("Uttar Pradesh"),
+                text("Merrut"));
+        //закрыли модалку
+        $("#closeLargeModal").click();
+
+        // нашли кнопку и кликнули по ней
+        $("#submit").click();
+        //$("#lastName").setValue("Ivan0V321~");
+        //$("#lastName").setValue("Ivan0V321~");
+        //$("#lastName").setValue("Ivan0V321~");
+
 
     }
 
