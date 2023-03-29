@@ -30,7 +30,7 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
         //  По id заполнили фамилию
         $("#lastName").setValue("Ivan0V321~");
         //  По id заполнили Email
-        $("#userEmail").setValue("N_a-t.m+e@e_X-a.m0ple.coM52");
+        $("#userEmail").setValue("N_a-t.m_-e@e_X-a.m0ple.cru");
         //  Кликнули по радиобатону gender
         $(".custom-control-label").click();
         //  ввели номер телефона студента
@@ -65,7 +65,7 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
        $(".table-responsive").shouldHave(
                 text("Ivan123"),
                 text("Ivan0V321~"),
-                text("N_a-t.m+e@e_X-a.m0ple.coM52"),
+                text("N_a-t.m_-e@e_X-a.m0ple.cru"),
                 text("Male"),
                 text("0123456789"),
                 text("24 April,1994"),
