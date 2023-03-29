@@ -58,7 +58,8 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
         $(byText("Merrut")).click();
-
+        // нашли кнопку и кликнули по ней
+        $("#submit").click();
 
         //проверили данные в таблице
        $(".table-responsive").shouldHave(
@@ -77,8 +78,8 @@ public class CheckStudentRegistrationForm extends FormTestConfig {
         //закрыли модалку
         $("#closeLargeModal").click();
 
-        // нашли кнопку и кликнули по ней
-        $("#submit").click();
+
+
         //$("#lastName").setValue("Ivan0V321~");
         //$("#lastName").setValue("Ivan0V321~");
         //$("#lastName").setValue("Ivan0V321~");
