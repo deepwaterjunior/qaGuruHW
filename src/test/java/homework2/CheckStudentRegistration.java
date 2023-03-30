@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class CheckStudentRegistration extends TestBase {
 
     @Test
-     void checkRegistrationForm(){
+    void checkRegistrationForm() {
 
 
         // Открыли страницу
@@ -61,7 +61,7 @@ public class CheckStudentRegistration extends TestBase {
         //  загрузили файл
         $("#uploadPicture").uploadFile(new File("src/test/resources/myuglyfacelol.jpg"));
 
-       //заполнили инпут
+        //заполнили инпут
         $("#currentAddress").setValue("You're looking damn good kitty, cuz you're in the Saint-Peterburg!");
 
         //выбрали штат и город
@@ -77,7 +77,7 @@ public class CheckStudentRegistration extends TestBase {
         $("#submit").click();
 
         //проверили данные в таблице
-       $(".table-responsive").shouldHave(
+        $(".table-responsive").shouldHave(
                 text("Ivan123"),
                 text("Ivan0V321~"),
                 text("N_a-t.m_-e@e_X-a.m0ple.cru"),
