@@ -7,7 +7,8 @@ public class TestBase {
 
     @BeforeAll
     static void configTestRegForm() {
-        Configuration.holdBrowserOpen = false;
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browser="Chrome";
         Configuration.browserSize="1900x1280";
     }
 }

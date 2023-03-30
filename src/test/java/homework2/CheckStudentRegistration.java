@@ -17,7 +17,10 @@ public class CheckStudentRegistration extends TestBase {
 
 
         // Открыли страницу
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
+
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         // По id заполнили имя
         $("#firstName").setValue("Ivan123");
